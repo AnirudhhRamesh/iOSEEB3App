@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import SystemConfiguration
-
+ 
 var myIndexprojects = 0
 var mySelectedProject = ""
 var mySelectedProjectColour = ""
