@@ -1,0 +1,6 @@
+framework module Pods_EEB3App {
+  umbrella header "Pods-EEB3App-umbrella.h"
+
+  export *
+  module * { export * }
+}

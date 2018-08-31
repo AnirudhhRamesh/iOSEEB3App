@@ -1,0 +1,6 @@
+framework module Pods_EEB3AppUITests {
+  umbrella header "Pods-EEB3AppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
