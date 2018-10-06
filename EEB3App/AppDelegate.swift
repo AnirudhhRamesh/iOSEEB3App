@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let myTabBar = self.window?.rootViewController as! UITabBarController // Getting Tab Bar
-        myTabBar.selectedIndex = 2 //Selecting tab here
+        myTabBar.selectedIndex = 0 //Selecting tab here
         
         FirebaseApp.configure()
         return true

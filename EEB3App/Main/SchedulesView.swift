@@ -80,13 +80,15 @@ class SchedulesView: UIViewController, UINavigationControllerDelegate, UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         myImageView.image = UIImage(data: data as Data)
         if let x = UserDefaults.standard.object(forKey: "ScheduleVisible") as? String
         {
             if x == "Schedule been uploaded"{
-                myScheduleTitle.text = ""
-                myScheduleDescript.text = ""
-                CardView.isHidden = true
+                //Hide the front view UI
                 data = UserDefaults.standard.object(forKey: "savedImage") as! NSData
                 myImageView.image = UIImage(data: data as Data)
             }
@@ -96,27 +98,4 @@ class SchedulesView: UIViewController, UINavigationControllerDelegate, UIImagePi
             }
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if let x = UserDefaults.standard.object(forKey: "ScheduleVisible") as? String
-        {
-            if x == "Schedule been uploaded"{
-                myScheduleTitle.text = ""
-                myScheduleDescript.text = ""
-                CardView.isHidden = true
-                data = UserDefaults.standard.object(forKey: "savedImage") as! NSData
-                myImageView.image = UIImage(data: data as Data)
-            }
-            else
-            {
-                
-            }
-        }
-    }
-    
 }
