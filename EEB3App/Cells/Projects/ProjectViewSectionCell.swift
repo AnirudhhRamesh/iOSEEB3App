@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-class ProjectViewCollectionViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource{
-  
+class ProjectViewSectionCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource{
     
     @IBOutlet weak var CollectionCornerView: UIView!
     @IBOutlet weak var ProjectCollectionTitle: UILabel!
@@ -42,7 +41,7 @@ class ProjectViewCollectionViewCell: UITableViewCell, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCell", for: indexPath) as! ProjectViewIconCell
         
-        cell.displayContent(banner: UIImage(named: "eeb3_clear_big")!, title: "Springfest 2019", color: Variables.primaryColor)
+        cell.displayContent(banner: Variables.schoolBanner!, title: "Springfest 2019", color: Variables.primaryColor)
         
         return cell
     }

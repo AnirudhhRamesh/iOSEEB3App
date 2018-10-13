@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-class Websites: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class Websites: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var collectionView2: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,28 +20,23 @@ class Websites: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            if collectionView == self.collectionView{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WebsiteCell
-        
-            cell.cornerView.layer.cornerRadius = 15
-            cell.cornerView.layer.masksToBounds = true
-                cell.displayContent(banner: UIImage(named: "EEB3_Logo_Tinted")!, title: "EEB3", websiteDescription: "School", titleColor: Variables.primaryColor)
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0{
+            //if udateAvailable {}
+            let cell = tableView.dequeueReusableCell(withIdentifier: "updateCell") as! ProjectViewUpdateCell
+            cell.displayContent(cellIcon: UIImage(named: "info")!, cellTitle: "\(Variables.appName) under development", cellDescription: "The \(Variables.appName) is currently under development, certain functions might not work properly.")
+            return cell
+            //else{}
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "websiteSectionCell") as! WebsiteSectionCell
+            cell.displayContent(sectionTitle: "School") //, sectionDictionary: websiteDictionary. Parse this later on in the WebsiteSectionCell
             return cell
         }
-            else{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WebsiteCell
-        
-                cell.cornerView.layer.cornerRadius = 15
-                cell.cornerView.layer.masksToBounds = true
-
-                cell.displayContent(banner: UIImage(named:"EEB3_Logo_Cropped_Tinted")!, title: "EEB3 App", websiteDescription: "Student", titleColor: Variables.primaryColor)
-                return cell
-        }
     }
+    
 }

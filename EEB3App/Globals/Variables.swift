@@ -11,6 +11,13 @@ import UIKit
 
 struct Variables{
     
+    //------String Asset Variables------//
+    static let appName = "EEB3 App" //"Should be alterable in the future"
+    static let schoolName = "EEB3"
+    
+    //------Image Asset Variables------//
+    static let schoolBanner = UIImage(named: "\(schoolName)Banner")
+    
     //------Design Variables------//
     
     //Color theme

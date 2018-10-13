@@ -11,10 +11,13 @@ import UIKit
 
 class ProjectViewUpdateCell: UITableViewCell{
     
+    
+    @IBOutlet weak var Icon: UIImageView!
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var Description: UILabel!
     
-    func displayContent(cellTitle: String, cellDescription: String){
+    func displayContent(cellIcon: UIImage, cellTitle: String, cellDescription: String){
+        Icon.image = cellIcon
         Title.text = cellTitle
         Description.text = cellDescription
     }

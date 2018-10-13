@@ -24,8 +24,12 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     @IBOutlet weak var projectCornerView: UIView!
     @IBOutlet weak var projectButton: UIButton!
     
+    @IBOutlet weak var unreadPostCount: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerC: UIView!
+    
+    
     
     //Quick Help arrays, used for the home page
     let iconArray: [UIImage] = [UIImage(named: "info")!, UIImage(named: "folder")!, UIImage(named: "mail")!, UIImage(named: "share-1")!, UIImage(named: "star")!]
@@ -83,20 +87,26 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ProjectNewsCell
         
         if (emailActive){
-            cell.displayContent(sender: "Schola Europa", title: "Schola Europa", description: "We are happy to announce that the new marking scheme will take place, starting this September 2018!", date: "09/08", postRead: false, cardColour: "#ffffff")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emailCell") as! EmailNewsCell
+            
+            cell.displayContent(sender: "Schola Europaea", title: "New Marking Scheme Official", description: "We are happy to announce that the new marking scheme will take place, starting this September 2018!", date: "09/08", postRead: false, cardColour: "#ffffff")
+            
             if (true){ //Replace with postReadArray[indexPath.row]
                 //cell.Title.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
                 //cardColour = #f9f9f9
                 //TODO: Create a programmatic constraint
             }
+            return cell
         }
         else{
-            cell.displayContent(sender: "Schola Europa", title: "Springfest 2019", description: "The new Springfest project is truly a new project that the school will love. Although our experienced organiser Mr Blomme has retired, we're certain that we're going to be able to show the school how amazing Springfest is, once again. We're certain we'll do a good job this year ;)!", date: "13/10", postRead: false, cardColour: "#ffffff")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "projectCell") as! ProjectNewsCell
+
+            cell.displayContent(sender: "Schola Europaea", banner: Variables.schoolBanner!, title: "Springfest 2019", description: "The new Springfest project is truly a new project that the school will love. Although our experienced organiser Mr Blomme has retired, we're certain that we're going to be able to show the school how amazing Springfest is, once again. We're certain we'll do a good job this year ;)!", date: "13/10", postRead: false, cardColour: "#ffffff")
+            
+            return cell
         }
-        return cell
     }
     
     

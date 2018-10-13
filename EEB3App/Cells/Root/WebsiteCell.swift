@@ -18,6 +18,9 @@ class WebsiteCell: UICollectionViewCell{
     
     func displayContent(banner: UIImage, title: String, websiteDescription: String, titleColor: String){
         
+        cornerView.layer.cornerRadius = Variables.cornerRadius
+        cornerView.layer.masksToBounds = true
+        
         Banner.image = banner
         Title.text = title
         websiteType.text = websiteDescription

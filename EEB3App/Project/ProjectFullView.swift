@@ -24,11 +24,11 @@ class ProjectFullView: UIViewController, UITableViewDelegate, UITableViewDataSou
         if indexPath.row == 0{ //if importantUpdates.count != false{}
         let cell = tableView.dequeueReusableCell(withIdentifier: "updateCell") as! ProjectViewUpdateCell
         
-            cell.displayContent(cellTitle: "Redesigning the iOS EEB3 App", cellDescription: "Please be aware that the iOS EEB3 App is currenty being fully updated with the latest design trends and features.")
+            cell.displayContent(cellIcon: UIImage(named: "alert-circle")!, cellTitle: "Redesigning the iOS EEB3 App", cellDescription: "Please be aware that the iOS EEB3 App is currenty being fully updated with the latest design trends and features.")
         return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "collectionCell") as! ProjectViewCollectionViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "collectionCell") as! ProjectViewSectionCell
             
             cell.displayContent(cellTitle: "School Events", cellDescription: "Redundant")
             

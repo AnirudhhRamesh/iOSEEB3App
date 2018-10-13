@@ -70,14 +70,14 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "projectCell2") as! ProjectNewsCell
             
-            cell.displayContent(sender: "Schola Europa", title: "Student Courses", description: "This is the text that would be used to identify the Student Courses description", date: "20/11", postRead: true, cardColour: "#ffffff")
+            cell.displayContent(sender: "Schola Europa", banner: Variables.schoolBanner!, title: "Student Courses", description: "This is the text that would be used to identify the Student Courses description", date: "20/11", postRead: true, cardColour: "#ffffff")
             
             return cell
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "projectCell2") as! ProjectNewsCell
             
-            cell.displayContent(sender: "Schola Europa", title: "Springfest 2018", description: "We have a feedback form, where we want to know more about the positive and negative aspects about SF 2018", date: "19/06", postRead: false, cardColour: "#ffffff")
+            cell.displayContent(sender: "Schola Europa", banner: Variables.schoolBanner!, title: "Springfest 2018", description: "We have a feedback form, where we want to know more about the positive and negative aspects about SF 2018", date: "19/06", postRead: false, cardColour: "#ffffff")
             
             return cell
         }

@@ -25,7 +25,7 @@
 		B74EAA741F641D4F0040D288 /* AbsencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EAA731F641D4F0040D288 /* AbsencesViewController.swift */; };
 		B75ED1622167B6C500808275 /* ProjectFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED1612167B6C500808275 /* ProjectFullView.swift */; };
 		B75ED1662167B85D00808275 /* ProjectViewUpdateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED1652167B85D00808275 /* ProjectViewUpdateCell.swift */; };
-		B75ED1682167B88000808275 /* ProjectViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED1672167B88000808275 /* ProjectViewCollectionViewCell.swift */; };
+		B75ED1682167B88000808275 /* ProjectViewSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED1672167B88000808275 /* ProjectViewSectionCell.swift */; };
 		B75ED16A2167B88C00808275 /* ProjectViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED1692167B88C00808275 /* ProjectViewCollectionCell.swift */; };
 		B75ED16C2167E94B00808275 /* ProjectViewIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED16B2167E94B00808275 /* ProjectViewIconCell.swift */; };
 		B76857F11F51729700DF2497 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76857F01F51729700DF2497 /* HelpView.swift */; };
@@ -63,6 +63,9 @@
 		B7C8B207203B5A42004AFFD1 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8B206203B5A42004AFFD1 /* QRCodeReader.swift */; };
 		B7C8B209203C92F2004AFFD1 /* TimerView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8B208203C92F2004AFFD1 /* TimerView2.swift */; };
 		B7CEAC2C1F92508D003F471C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CEAC2B1F92508D003F471C /* CardView.swift */; };
+		B7F5A5792168F32C001AE65F /* EmailNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5A5782168F32C001AE65F /* EmailNewsCell.swift */; };
+		B7F5A57B216907C0001AE65F /* WebsiteSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5A57A216907C0001AE65F /* WebsiteSectionCell.swift */; };
+		B7F5A57D21691572001AE65F /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5A57C21691572001AE65F /* ImageCropper.swift */; };
 		DFD89A48DCA1670475C3ADDA /* Pods_EEB3AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377A97C9A8E602CE301B578 /* Pods_EEB3AppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +110,7 @@
 		B74EAA731F641D4F0040D288 /* AbsencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsencesViewController.swift; sourceTree = "<group>"; };
 		B75ED1612167B6C500808275 /* ProjectFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFullView.swift; sourceTree = "<group>"; };
 		B75ED1652167B85D00808275 /* ProjectViewUpdateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewUpdateCell.swift; sourceTree = "<group>"; };
-		B75ED1672167B88000808275 /* ProjectViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		B75ED1672167B88000808275 /* ProjectViewSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewSectionCell.swift; sourceTree = "<group>"; };
 		B75ED1692167B88C00808275 /* ProjectViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewCollectionCell.swift; sourceTree = "<group>"; };
 		B75ED16B2167E94B00808275 /* ProjectViewIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewIconCell.swift; sourceTree = "<group>"; };
 		B76857F01F51729700DF2497 /* HelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
@@ -151,6 +154,9 @@
 		B7C8B206203B5A42004AFFD1 /* QRCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
 		B7C8B208203C92F2004AFFD1 /* TimerView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView2.swift; sourceTree = "<group>"; };
 		B7CEAC2B1F92508D003F471C /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B7F5A5782168F32C001AE65F /* EmailNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailNewsCell.swift; sourceTree = "<group>"; };
+		B7F5A57A216907C0001AE65F /* WebsiteSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteSectionCell.swift; sourceTree = "<group>"; };
+		B7F5A57C21691572001AE65F /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
 		B950B0BC18C818ED82E42A7F /* Pods-EEB3App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEB3App.release.xcconfig"; path = "Pods/Target Support Files/Pods-EEB3App/Pods-EEB3App.release.xcconfig"; sourceTree = "<group>"; };
 		D154358114F6B2157DE82C13 /* Pods-EEB3App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEB3App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EEB3App/Pods-EEB3App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +240,7 @@
 				B722E138215F95E50038B632 /* Home.swift */,
 				B78B5D372163F54100F64F2F /* Projects.swift */,
 				B78B5D3D216403C900F64F2F /* Websites.swift */,
+				B7F5A57C21691572001AE65F /* ImageCropper.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -342,6 +349,8 @@
 				B7B7BB82215FDDE10089A7DD /* ProjectNewsCell.swift */,
 				B78B5D3B2163F7E300F64F2F /* ProjectIconCell.swift */,
 				B78B5D3F2164040D00F64F2F /* WebsiteCell.swift */,
+				B7F5A5782168F32C001AE65F /* EmailNewsCell.swift */,
+				B7F5A57A216907C0001AE65F /* WebsiteSectionCell.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -350,7 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				B75ED1652167B85D00808275 /* ProjectViewUpdateCell.swift */,
-				B75ED1672167B88000808275 /* ProjectViewCollectionViewCell.swift */,
+				B75ED1672167B88000808275 /* ProjectViewSectionCell.swift */,
 				B75ED1692167B88C00808275 /* ProjectViewCollectionCell.swift */,
 				B75ED16B2167E94B00808275 /* ProjectViewIconCell.swift */,
 			);
@@ -760,7 +769,7 @@
 				B7795AA91F367C960008AEC5 /* ProjectsView.swift in Sources */,
 				B75ED16C2167E94B00808275 /* ProjectViewIconCell.swift in Sources */,
 				B7795AA51F367C960008AEC5 /* AppDelegate.swift in Sources */,
-				B75ED1682167B88000808275 /* ProjectViewCollectionViewCell.swift in Sources */,
+				B75ED1682167B88000808275 /* ProjectViewSectionCell.swift in Sources */,
 				B76A9E3F2073B4EB00AAB5BA /* DetailNotificationView.swift in Sources */,
 				B738439D206D62E000B7A047 /* NotificationCenterLogin.swift in Sources */,
 				B748786B1F3CADEF00BC09A5 /* WebsitesView.swift in Sources */,
@@ -781,13 +790,16 @@
 				B7B5638C1F5472BF00F61788 /* QuickTasksViewController.swift in Sources */,
 				B722E140215FA5E40038B632 /* QuickHelp.swift in Sources */,
 				B7C89881206A57F300E72D9A /* AutoTableBannerCell.swift in Sources */,
+				B7F5A5792168F32C001AE65F /* EmailNewsCell.swift in Sources */,
 				B7B7BB7D215FD2530089A7DD /* LoginContainer.swift in Sources */,
 				B722E13C215F98A20038B632 /* Variables.swift in Sources */,
 				B73FAB7021600F45001D83EF /* Circle.swift in Sources */,
 				B76857F71F51899B00DF2497 /* ProjectsTableViewCell.swift in Sources */,
 				B7696257206D3015007E1EBA /* NotificationCell.swift in Sources */,
+				B7F5A57D21691572001AE65F /* ImageCropper.swift in Sources */,
 				B7B121D71F63290B00203E3D /* EEB3App.xcdatamodeld in Sources */,
 				B7AC5BCB1F3B4BC700B1E58D /* AddTaskViewController.swift in Sources */,
+				B7F5A57B216907C0001AE65F /* WebsiteSectionCell.swift in Sources */,
 				B7C89883206A5A5800E72D9A /* AutoTableButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
