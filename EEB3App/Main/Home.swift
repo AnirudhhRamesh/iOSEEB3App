@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 
-class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource{
+class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cornerView: UIView!
     
+    @IBOutlet weak var newsCardViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var newsCardView: CardView!
     @IBOutlet weak var newsCornerView: UIView!
+    @IBOutlet weak var scrollNewsButton: UIButton!
     
     @IBOutlet weak var buttonCornerView: UIView!
     
@@ -29,6 +32,7 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerC: UIView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     //Quick Help arrays, used for the home page
@@ -41,12 +45,19 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     //Button Tapped Boolean
     var emailActive = true
     
+    //Heights of Navigation and tabBar sizes
+    var topBar: CGFloat = 0
+    var bottomBar: CGFloat = 0
+    
+    var isScrolled: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
+        animateTableView(tableView: tableView, animationDuration: 1)
+        animateCollectionView(collectionView: collectionView)
         newsCornerView.layer.cornerRadius = 15
         newsCornerView.layer.masksToBounds = true
     
@@ -63,6 +74,30 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         projectCornerView.layer.masksToBounds = true
     }
     
+    //Organisation of Scrolling View
+    override func viewDidLayoutSubviews() {
+        topBar = (self.navigationController?.navigationBar.frame.height)!
+        bottomBar = (self.tabBarController?.tabBar.frame.height)!
+        newsCardViewHeight.constant = self.view.frame.size.height - (topBar + bottomBar/1.6)
+    }
+    
+    @IBAction func maximiseNewsButton(_ sender: Any)
+    {
+        if (!isScrolled){
+            let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentSize.height - newsCardViewHeight.constant - 12)
+            self.scrollView.setContentOffset(bottomOffset, animated: true)
+            let img = UIImage(named: "minimize-2")
+            scrollNewsButton.setImage(img , for: .normal)
+            isScrolled = true
+        }
+        else{
+            let topOffset = CGPoint(x: 0, y:0)
+            self.scrollView.setContentOffset(topOffset, animated: true)
+            let img = UIImage(named: "maximize-2")
+            scrollNewsButton.setImage(img , for: .normal)
+            isScrolled = false
+        }
+    }
     
     //------Set up of Quick Help Collection View------//
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,8 +107,6 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "quickHelpCell", for: indexPath) as! QuickHelp
-        
-        //cell.CircularCardView.makeCircular()
         
         cell.displayContent(icon: iconArray[indexPath.row], title: titleArray[indexPath.row], color: bgColorArray[indexPath.row])
         
@@ -90,7 +123,6 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         
         if (emailActive){
             let cell = tableView.dequeueReusableCell(withIdentifier: "emailCell") as! EmailNewsCell
-            
             cell.displayContent(sender: "Schola Europaea", title: "New Marking Scheme Official", description: "We are happy to announce that the new marking scheme will take place, starting this September 2018!", date: "09/08", postRead: false, cardColour: "#ffffff")
             
             if (true){ //Replace with postReadArray[indexPath.row]
@@ -102,13 +134,11 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "projectCell") as! ProjectNewsCell
-
             cell.displayContent(sender: "Schola Europaea", banner: Variables.schoolBanner!, title: "Springfest 2019", description: "The new Springfest project is truly a new project that the school will love. Although our experienced organiser Mr Blomme has retired, we're certain that we're going to be able to show the school how amazing Springfest is, once again. We're certain we'll do a good job this year ;)!", date: "13/10", postRead: false, cardColour: "#ffffff")
             
             return cell
         }
     }
-    
     
     //Button Selection
     @IBAction func emailButtonTapped(_ sender: Any)
@@ -121,6 +151,7 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
             projectButton.backgroundColor = UIColor.groupTableViewBackground
             
             emailActive = true
+            animateTableView(tableView: tableView, animationDuration: 0.5)
             tableView.reloadData()
         }
     }
@@ -135,9 +166,44 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
             emailButton.backgroundColor = UIColor.groupTableViewBackground
             
             emailActive = false
+            animateTableView(tableView: tableView, animationDuration: 0.5)
             tableView.reloadData()
         }
     }
     
+    func animateTableView(tableView:UITableView, animationDuration: Double) {
+        let view = tableView
+        let offset = CGPoint(x: 0, y: 200)
+        var startTransform = CATransform3DIdentity // 2
+        startTransform = CATransform3DRotate(CATransform3DIdentity,
+                                             0, 0.0, 0.0, 1.0) // 3
+        startTransform = CATransform3DTranslate(startTransform, offset.x, offset.y, 0.0) // 4
+        
+        // 5
+        view.layer.transform = startTransform
+        view.layer.opacity = 0.2
+        
+        UIView.animate(withDuration: animationDuration, delay: 0, options: [.allowUserInteraction, .curveEaseInOut], animations: { () -> Void in
+            view.layer.transform = CATransform3DIdentity
+            view.layer.opacity = 1
+        }, completion: nil)
+    }
     
+    func animateCollectionView(collectionView:UICollectionView) {
+        let view = collectionView
+        let offset = CGPoint(x: 100, y: 0)
+        var startTransform = CATransform3DIdentity // 2
+        startTransform = CATransform3DRotate(CATransform3DIdentity,
+                                             0, 0.0, 0.0, 1.0) // 3
+        startTransform = CATransform3DTranslate(startTransform, offset.x, offset.y, 0.0) // 4
+        
+        // 5
+        view.layer.transform = startTransform
+        view.layer.opacity = 0.2
+        
+        UIView.animate(withDuration: 1, delay: 0, options: [.allowUserInteraction, .curveEaseInOut], animations: { () -> Void in
+            view.layer.transform = CATransform3DIdentity
+            view.layer.opacity = 1
+        }, completion: nil)
+    }
 }

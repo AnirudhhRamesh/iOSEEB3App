@@ -11,11 +11,20 @@ import UIKit
 
 class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var cornerViewProjects: UIView!
     @IBOutlet weak var cornerViewProjectsNews: UIView!
+    @IBOutlet weak var ProjectNewsCardHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var scrollButton: UIButton!
+    
+    //Heights of Navigation and tabBar sizes
+    var topBar: CGFloat = 0
+    var bottomBar: CGFloat = 0
+    var isScrolled:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +39,32 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         cornerViewProjectsNews.layer.masksToBounds = true
         
     }
+    
+    //Organisation of Scrolling View
+    override func viewDidLayoutSubviews() {
+        topBar = (self.navigationController?.navigationBar.frame.height)!
+        bottomBar = (self.tabBarController?.tabBar.frame.height)!
+        ProjectNewsCardHeight.constant = self.view.frame.size.height - (topBar + bottomBar/1.6)
+    }
+    
+    @IBAction func scrollButtonTapped(_ sender: Any)
+    {
+        if (!isScrolled){
+            let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentSize.height - ProjectNewsCardHeight.constant - 12)
+            self.scrollView.setContentOffset(bottomOffset, animated: true)
+            let img = UIImage(named: "minimize-2")
+            scrollButton.setImage(img , for: .normal)
+            isScrolled = true
+        }
+        else{
+            let topOffset = CGPoint(x: 0, y:0)
+            self.scrollView.setContentOffset(topOffset, animated: true)
+            let img = UIImage(named: "maximize-2")
+            scrollButton.setImage(img , for: .normal)
+            isScrolled = false
+        }
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10

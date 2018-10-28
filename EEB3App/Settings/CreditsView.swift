@@ -6,30 +6,22 @@
 //  Copyright © 2017 RAMESH anirudhh. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-let nameCrediters = ["Anirudhh Ramesh", "", "", "", ""]
-let jobCrediters = ["Chief Developer", "", "", "", ""]
+class CreditsView: UIViewController{
 
-
-class CreditsViewController: UIViewController{
-
+    @IBOutlet weak var cornerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-    }
-
-    @IBAction func emailTapped(_ sender: Any) {
-        var email: String = "rameshan@student.eursc.eu"
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        if let url = URL(string: "mailto:\(email)") {
-            UIApplication.shared.open(url)
-            print(url)
-    }
-        else{
-            print("error opening email address")
-        }
+        cornerView.layer.cornerRadius = Variables.cornerRadius
+        cornerView.layer.masksToBounds = true
+        
     }
     
 }

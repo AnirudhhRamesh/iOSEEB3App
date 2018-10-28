@@ -27,15 +27,9 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var x: Int = 0
     
     //List of String Array variables to hold notification variables
-    
-
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var timeText: UILabel!
     @IBOutlet weak var dateText: UILabel!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
