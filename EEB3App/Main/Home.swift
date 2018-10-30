@@ -13,6 +13,7 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cornerView: UIView!
+    @IBOutlet weak var collectionBanner: UIImageView!
     
     @IBOutlet weak var newsCardViewHeight: NSLayoutConstraint!
     @IBOutlet weak var newsCardView: CardView!
@@ -34,7 +35,7 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
+    var selectedSchool: [SchoolInformation] = []
     //Quick Help arrays, used for the home page
     let iconArray: [UIImage] = [UIImage(named: "info")!, UIImage(named: "folder")!, UIImage(named: "mail")!, UIImage(named: "share-1")!, UIImage(named: "star")!]
     let titleArray: [String] = ["News", "Projects", "Feedback", "Share", "Credits"]
@@ -56,6 +57,26 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
+        if let data = UserDefaults.standard.value(forKey:"selectedSchool") as? Data {
+            selectedSchool = try! PropertyListDecoder().decode(Array<SchoolInformation>.self, from: data)
+            let selectedSchoolIndex = UserDefaults.standard.integer(forKey: "selectedSchoolIndex")
+            Variables.appName = self.selectedSchool[selectedSchoolIndex].abbrName
+            Variables.schoolName = self.selectedSchool[selectedSchoolIndex].abbrName
+            Variables.fullSchoolName = self.selectedSchool[selectedSchoolIndex].fullName
+            Variables.schoolCity = self.selectedSchool[selectedSchoolIndex].schoolCity
+            
+            if UserDefaults.standard.object(forKey: "schoolBanner") != nil{
+                print("Image already exists")
+                let savedSchoolBanner = UIImage(data: UserDefaults.standard.object(forKey: "schoolBanner") as! Data)
+                Variables.schoolBanner = savedSchoolBanner
+                collectionBanner.image = savedSchoolBanner
+            }
+            else{
+                print("Downloading image")
+                downloadImage(from: URL(string: self.selectedSchool[selectedSchoolIndex].schoolBanner)!)
+            }
+        }
+        
         animateTableView(tableView: tableView, animationDuration: 1)
         animateCollectionView(collectionView: collectionView)
         newsCornerView.layer.cornerRadius = 15
@@ -72,6 +93,27 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         
         projectCornerView.layer.cornerRadius = Variables.cornerRadius
         projectCornerView.layer.masksToBounds = true
+    }
+    
+    //Download image asynchonously
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    //Download images
+    func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            
+            DispatchQueue.main.async() {
+                Variables.schoolBanner = UIImage(data: data)
+                self.collectionBanner.image = UIImage(data: data)
+                UserDefaults().set(data, forKey: "schoolBanner")
+            }
+        }
     }
     
     //Organisation of Scrolling View

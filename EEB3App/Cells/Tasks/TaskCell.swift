@@ -12,11 +12,12 @@ import UIKit
 class TaskCell: UITableViewCell{
     
     @IBOutlet weak var TaskLabel: UILabel!
-    @IBOutlet weak var taskAlert: UIImageView!
+    @IBOutlet weak var taskCheck: UIImageView!
+    @IBOutlet weak var taskGroupColour: UIView!
     
-    
-    func displayContent(task: String, priority: Bool, isCompleted: Bool, indexPath: Int){
+    func displayContent(task: String, groupColour: String, isCompleted: Bool, indexPath: Int){
         TaskLabel.text = task
-        taskAlert.isHidden = !priority
+        taskGroupColour.makeCircular()
+        taskGroupColour.backgroundColor = UIColor(hexString: groupColour)
     }
 }

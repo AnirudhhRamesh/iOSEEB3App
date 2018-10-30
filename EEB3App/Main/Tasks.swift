@@ -65,7 +65,7 @@ class Tasks: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskCell
-        cell.displayContent(task: "Finish German Exercises: S.34 Ex 3.4 und S.45 Ex 12.5", priority: true, isCompleted: false, indexPath: 0)
+        cell.displayContent(task: "Finish German Exercises: S.34 Ex 3.4 und S.45 Ex 12.5", groupColour: "#3f51b5", isCompleted: false, indexPath: 0)
         return cell
     }
     

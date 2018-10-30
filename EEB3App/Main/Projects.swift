@@ -73,7 +73,7 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCell", for: indexPath) as! ProjectIconCell
         
-        cell.displayContent(banner: UIImage(named: "Desert")!, title: "Springfest 2019", projectDescription: "School event", color: "#3f51b5")
+        cell.displayContent(banner: UIImage(named: "Desert")!, title: "Springfest 2019", projectDescription: "School event")
         
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         

@@ -15,16 +15,13 @@ class ProjectViewIconCell: UICollectionViewCell{
     @IBOutlet weak var Banner: UIImageView!
     @IBOutlet weak var Title: UILabel!
     
-    func displayContent(banner: UIImage, title: String, color: String){
+    func displayContent(banner: UIImage, title: String){
         
         cornerView.layer.cornerRadius = 15
         cornerView.layer.masksToBounds = true
         
         Banner.image = banner
         Title.text = title
-        
-        Title.textColor = UIColor.init(hexString: color)
-        
     }
     
 }

@@ -14,19 +14,14 @@ class WebsiteCell: UICollectionViewCell{
     @IBOutlet weak var cornerView: UIView!
     @IBOutlet weak var Banner: UIImageView!
     @IBOutlet weak var Title: UILabel!
-    @IBOutlet weak var websiteType: UILabel!
     
-    func displayContent(banner: UIImage, title: String, websiteDescription: String, titleColor: String){
+    func displayContent(title: String, banner: UIImage){
         
         cornerView.layer.cornerRadius = Variables.cornerRadius
         cornerView.layer.masksToBounds = true
         
         Banner.image = banner
         Title.text = title
-        websiteType.text = websiteDescription
-        
-        Title.textColor = UIColor.init(hexString: titleColor)
-        
     }
 
 }

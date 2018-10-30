@@ -41,7 +41,7 @@ class ProjectViewSectionCell: UITableViewCell, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCell", for: indexPath) as! ProjectViewIconCell
         
-        cell.displayContent(banner: Variables.schoolBanner!, title: "Springfest 2019", color: Variables.primaryColor)
+        cell.displayContent(banner: Variables.schoolBanner!, title: "Springfest 2019")
         
         return cell
     }

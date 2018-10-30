@@ -16,7 +16,7 @@ class ProjectIconCell: UICollectionViewCell{
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var projectType: UILabel!
     
-    func displayContent(banner: UIImage, title: String, projectDescription: String, color: String){
+    func displayContent(banner: UIImage, title: String, projectDescription: String){
         
         cornerView.layer.cornerRadius = 15
         cornerView.layer.masksToBounds = true
@@ -24,8 +24,6 @@ class ProjectIconCell: UICollectionViewCell{
         Banner.image = banner
         Title.text = title
         projectType.text = projectDescription
-        
-        Title.textColor = UIColor.init(hexString: color)
         
     }
     
