@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		02E4CBFB47B8ACD764C028D5 /* Pods_EEB3App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B54362604721C63B837BFBA /* Pods_EEB3App.framework */; };
 		47E8E1B425261CE392DADB5F /* Pods_EEB3AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FB7E63493FDD22E20909AE /* Pods_EEB3AppUITests.framework */; };
+		B712B9642189120100E2081E /* CreateGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B712B9632189120100E2081E /* CreateGroup.swift */; };
+		B712B9662189120D00E2081E /* CreateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B712B9652189120D00E2081E /* CreateTask.swift */; };
+		B712B9692189177000E2081E /* AddNewTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B712B9682189177000E2081E /* AddNewTaskCell.swift */; };
+		B712B96B2189179700E2081E /* NewTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B712B96A2189179700E2081E /* NewTaskCell.swift */; };
 		B722E139215F95E50038B632 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B722E138215F95E50038B632 /* Home.swift */; };
 		B722E13C215F98A20038B632 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = B722E13B215F98A20038B632 /* Variables.swift */; };
 		B722E140215FA5E40038B632 /* QuickHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B722E13F215FA5E40038B632 /* QuickHelp.swift */; };
@@ -116,6 +120,10 @@
 		81FB7E63493FDD22E20909AE /* Pods_EEB3AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EEB3AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9362C1478D3B8938BDA80D11 /* Pods-EEB3AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEB3AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EEB3AppUITests/Pods-EEB3AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B54362604721C63B837BFBA /* Pods_EEB3App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EEB3App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B712B9632189120100E2081E /* CreateGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroup.swift; sourceTree = "<group>"; };
+		B712B9652189120D00E2081E /* CreateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTask.swift; sourceTree = "<group>"; };
+		B712B9682189177000E2081E /* AddNewTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskCell.swift; sourceTree = "<group>"; };
+		B712B96A2189179700E2081E /* NewTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskCell.swift; sourceTree = "<group>"; };
 		B722E138215F95E50038B632 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		B722E13B215F98A20038B632 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		B722E13F215FA5E40038B632 /* QuickHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickHelp.swift; sourceTree = "<group>"; };
@@ -241,6 +249,15 @@
 				81FB7E63493FDD22E20909AE /* Pods_EEB3AppUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B712B9672189176500E2081E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B712B9682189177000E2081E /* AddNewTaskCell.swift */,
+				B712B96A2189179700E2081E /* NewTaskCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B71D04462139EF120024AC30 /* SMS */ = {
@@ -470,7 +487,10 @@
 		B7731C962185F54200B9AD75 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				B712B9672189176500E2081E /* Cells */,
 				B7731C972185F55800B9AD75 /* GroupColumnFlowLayout.swift */,
+				B712B9632189120100E2081E /* CreateGroup.swift */,
+				B712B9652189120D00E2081E /* CreateTask.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -909,6 +929,7 @@
 				B7686AD2206AEA4F006487B7 /* ProjectParticipate.swift in Sources */,
 				B7C8B207203B5A42004AFFD1 /* QRCodeReader.swift in Sources */,
 				B7CEAC2C1F92508D003F471C /* CardView.swift in Sources */,
+				B712B9692189177000E2081E /* AddNewTaskCell.swift in Sources */,
 				B78B5D3C2163F7E300F64F2F /* ProjectIconCell.swift in Sources */,
 				B7AC5BC71F3B376500B1E58D /* SettingsView.swift in Sources */,
 				B76857F51F51735E00DF2497 /* TimerView.swift in Sources */,
@@ -952,6 +973,7 @@
 				B78B5D402164040D00F64F2F /* WebsiteCell.swift in Sources */,
 				B78B5D382163F54100F64F2F /* Projects.swift in Sources */,
 				B7AC5BC91F3B4B3900B1E58D /* TasksViewController.swift in Sources */,
+				B712B9642189120100E2081E /* CreateGroup.swift in Sources */,
 				B7C8B209203C92F2004AFFD1 /* TimerView2.swift in Sources */,
 				B7C89887206A5E4E00E72D9A /* ProjectOverview.swift in Sources */,
 				B7F24B65217B9A8A0084B4B8 /* Schedules.swift in Sources */,
@@ -970,12 +992,14 @@
 				B73FAB7021600F45001D83EF /* Circle.swift in Sources */,
 				B76857F71F51899B00DF2497 /* ProjectsTableViewCell.swift in Sources */,
 				B74E25A0217B460500B882E5 /* ScrollView.swift in Sources */,
+				B712B96B2189179700E2081E /* NewTaskCell.swift in Sources */,
 				B7696257206D3015007E1EBA /* NotificationCell.swift in Sources */,
 				B7F5A57D21691572001AE65F /* ImageCropper.swift in Sources */,
 				B7B121D71F63290B00203E3D /* EEB3App.xcdatamodeld in Sources */,
 				B7AC5BCB1F3B4BC700B1E58D /* AddTaskViewController.swift in Sources */,
 				B763D0B821870D6800635DB7 /* LoginSchools.swift in Sources */,
 				B7F5A57B216907C0001AE65F /* WebsiteSectionCell.swift in Sources */,
+				B712B9662189120D00E2081E /* CreateTask.swift in Sources */,
 				B7C89883206A5A5800E72D9A /* AutoTableButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

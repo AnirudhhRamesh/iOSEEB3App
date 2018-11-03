@@ -233,6 +233,7 @@ class AddPeriod: UIViewController,  UICollectionViewDelegate, UICollectionViewDa
         
         Courses.append(ScheduleClass(cellCoordinate: selectedPeriods, title: className.text!, room: classRoom.text!, colour: selectedColourString))
         UserDefaults.standard.set(try? PropertyListEncoder().encode(Courses), forKey:"courses")
+        self.dismiss(animated: true, completion: nil)
     }
     
     func tap(_ sender: UITapGestureRecognizer) {

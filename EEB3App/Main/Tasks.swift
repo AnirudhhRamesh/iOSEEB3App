@@ -18,7 +18,7 @@ class Tasks: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
     @IBOutlet weak var groupCornerView: UIView!
     @IBOutlet weak var tasksCornerView: UIView!
     
-    let count = 5
+    let count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +34,20 @@ class Tasks: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     //Create a new task
-    //When the 
+    @IBAction func newObjectTapped(_ sender: Any)
+    {
+        let myalert = UIAlertController(title: "Create a New Item", message: "Select whether you would like to create a new task or a new group", preferredStyle: UIAlertControllerStyle.alert)
+        
+        myalert.addAction(UIAlertAction(title: "Group", style: .default) { (action:UIAlertAction!) in
+            self.performSegue(withIdentifier: "createGroupSegue", sender: self)
+        })
+        myalert.addAction(UIAlertAction(title: "Task", style: .default) { (action:UIAlertAction!) in
+            self.performSegue(withIdentifier: "createTaskSegue", sender: self)
+        })
+        
+        self.present(myalert, animated: true)
+    }
+    
     
     let columnLayout = GroupColumnFlowLayout(
         cellsPerRow: 3,
@@ -44,18 +57,31 @@ class Tasks: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
     )
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return count
+        if count == 0{
+            return 1
+        }
+        else{
+            return count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == count - 1{
+        if count == 0{
             let addTaskGroupCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addTaskGroupCell", for: indexPath) as! AddTaskGroupCell
+            //Create an alert that informs the user what one can do by using a grouped task
+            //Once the message has been read, save a value to the user shared defaults
             return addTaskGroupCell
         }
         else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskGroupCell", for: indexPath) as! TaskGroupCell
-            cell.displayContent(title: "Integrated Sciences", completedTasks: 4, totalTasks: 12)
-            return cell
+            if indexPath.row == count - 1{
+                let addTaskGroupCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addTaskGroupCell", for: indexPath) as! AddTaskGroupCell
+                return addTaskGroupCell
+            }
+            else{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskGroupCell", for: indexPath) as! TaskGroupCell
+                cell.displayContent(title: "Integrated Sciences", completedTasks: 4, totalTasks: 12)
+                return cell
+            }
         }
     }
     

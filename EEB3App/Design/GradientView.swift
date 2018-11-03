@@ -13,6 +13,10 @@ import UIKit
     var topColor: UIColor = UIColor.black
     var bottomColor: UIColor = UIColor.black
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
     override open class var layerClass: AnyClass {
         return CAGradientLayer.classForCoder()
     }
