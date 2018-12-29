@@ -10,18 +10,17 @@ import Foundation
 import UIKit
 
 class CreditsView: UIViewController{
-
-    @IBOutlet weak var cornerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         
-        cornerView.layer.cornerRadius = Variables.cornerRadius
-        cornerView.layer.masksToBounds = true
-        
+        navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
     
 }

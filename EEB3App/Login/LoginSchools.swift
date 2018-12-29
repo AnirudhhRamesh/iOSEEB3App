@@ -29,7 +29,6 @@ class LoginSchools: UIViewController, UITableViewDelegate, UITableViewDataSource
         super.viewDidLoad()
 
         let schoolsRef = Database.database().reference().child("Schools")
-        
         schoolsRef.observe(.value, with: { snapshot in
             for school in snapshot.children {
                 if let schoolSnapshot = school as? DataSnapshot{

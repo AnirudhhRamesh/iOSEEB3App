@@ -8,7 +8,15 @@
 
 import Foundation
 import UIKit
+import Firebase
 
+struct ProjectOverviewStruct:Codable{
+    var title:String
+    var type: String
+    var banner:String
+    var colour: String
+    var lastUpdated: String
+}
 class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -26,6 +34,9 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     var bottomBar: CGFloat = 0
     var isScrolled:Bool = false
     
+    var selectedSchool: [SchoolInformation] = []
+    var ProjectInformation: [ProjectOverviewStruct] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +49,57 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         cornerViewProjectsNews.layer.cornerRadius = 15
         cornerViewProjectsNews.layer.masksToBounds = true
         
+        if let data = UserDefaults.standard.value(forKey:"selectedSchool") as? Data {
+            selectedSchool = try! PropertyListDecoder().decode(Array<SchoolInformation>.self, from: data)
+            let selectedSchoolIndex = UserDefaults.standard.integer(forKey: "selectedSchoolIndex")
+            
+            //Get the list of projects and display them in the project collectionView
+            let projectsRef = Database.database().reference().child("Schools").child(Variables.schoolName).child("Projects")
+            projectsRef.observe(.value, with: { snapshot in
+                for project in snapshot.children {
+                    if let projectSnapshot = project as? DataSnapshot{
+                        let otherProjectInformation = projectSnapshot.childSnapshot(forPath: "Other").value as? NSDictionary
+                        self.ProjectInformation.append(ProjectOverviewStruct(title: otherProjectInformation?.value(forKey: "title") as! String, type: otherProjectInformation?.value(forKey: "type") as! String, banner: otherProjectInformation?.value(forKey: "banner") as! String, colour: otherProjectInformation?.value(forKey: "colour") as! String, lastUpdated: otherProjectInformation?.value(forKey: "lastUpdated") as! String))
+                        print(self.ProjectInformation)
+                        self.collectionView.reloadData()
+                    }
+                }
+            })
+            
+            /*
+            if UserDefaults.standard.object(forKey: "schoolBanner") != nil{
+                print("Image already exists")
+                let savedSchoolBanner = UIImage(data: UserDefaults.standard.object(forKey: "schoolBanner") as! Data)
+                Variables.schoolBanner = savedSchoolBanner
+            }
+            else{
+                print("Downloading image")
+            }
+            */
+            
+        }
     }
+    
+    //Download image asynchonously
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func downloadImage(from url: URL, indexPath: IndexPath) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            
+            DispatchQueue.main.async() {
+                Variables.schoolBanner = UIImage(data: data)
+                //self.collectionBanner.image = UIImage(data: data)
+                UserDefaults().set(data, forKey: self.ProjectInformation[indexPath.row].title)
+            }
+        }
+    }
+    
     
     //Organisation of Scrolling View
     override func viewDidLayoutSubviews() {
@@ -67,14 +128,17 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return ProjectInformation.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //Sort out cells by the date they were last updated here:
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCell", for: indexPath) as! ProjectIconCell
+        //Add in the banners later on
+        cell.displayContent(banner: UIImage(named: "Desert")!, title: ProjectInformation[indexPath.row].title, projectDescription: ProjectInformation[indexPath.row].type)
         
-        cell.displayContent(banner: UIImage(named: "Desert")!, title: "Springfest 2019", projectDescription: "School event")
-        
+        print(ProjectInformation[indexPath.row].title)
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         
         return cell
@@ -87,6 +151,9 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         
         if let index = indexPath {
             print("Got clicked on index: \(index)!")
+            //performSegue
+            UserDefaults.standard.set(ProjectInformation[index.row].title, forKey: "selectedProject")
+            //Open the selected project view, by setting the project values
         }
     }
     

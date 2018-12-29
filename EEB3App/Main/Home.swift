@@ -57,6 +57,8 @@ class Home: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
+        collectionBanner.image = UIImage(named: "EEB3_Logo")
+        
         if let data = UserDefaults.standard.value(forKey:"selectedSchool") as? Data {
             selectedSchool = try! PropertyListDecoder().decode(Array<SchoolInformation>.self, from: data)
             let selectedSchoolIndex = UserDefaults.standard.integer(forKey: "selectedSchoolIndex")
