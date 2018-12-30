@@ -242,7 +242,7 @@
                                     <outlet property="delegate" destination="osN-Cf-uTX" id="cte-Ta-9Im"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9u-jY-XDx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9u-jY-XDx">
                                 <rect key="frame" x="252" y="208.5" width="102" height="42.5"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.76862745098039209" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -253,7 +253,7 @@
                                     <action selector="lowButton:" destination="osN-Cf-uTX" eventType="touchUpInside" id="eWW-ck-YAE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Orr-Zb-HyK">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Orr-Zb-HyK">
                                 <rect key="frame" x="136.5" y="208.5" width="102" height="42.5"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.4941176471" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -267,7 +267,7 @@
                                     <action selector="mediumButton:" destination="osN-Cf-uTX" eventType="touchUpInside" id="Dhd-vT-LIn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c71-Rm-QqB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c71-Rm-QqB">
                                 <rect key="frame" x="20" y="208.5" width="102.5" height="42.5"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -278,14 +278,14 @@
                                     <action selector="highButton:" destination="osN-Cf-uTX" eventType="touchUpInside" id="Fru-xf-2ni"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9c-Ou-Sc1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9c-Ou-Sc1">
                                 <rect key="frame" x="20" y="177" width="335" height="23.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWx-D7-vIp">
-                                <rect key="frame" x="20" y="608.5" width="335" height="38.5"/>
+                                <rect key="frame" x="20" y="471.5" width="68" height="175.5"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.31764705879999999" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FWx-D7-vIp" secondAttribute="height" multiplier="374:43" id="Hra-bQ-Nrc"/>
@@ -298,7 +298,7 @@
                                     <action selector="addItem:" destination="osN-Cf-uTX" eventType="touchUpInside" id="qNq-cN-zVw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="High" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oc-uk-yLS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oc-uk-yLS">
                                 <rect key="frame" x="20" y="329.5" width="335" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="274" id="5C2-Y3-3e9"/>
@@ -5632,6 +5632,7 @@ Email icon
                         <outlet property="tableView" destination="GdB-Qz-gs0" id="mSa-gp-KyM"/>
                         <segue destination="DPb-SY-qOB" kind="show" identifier="AutoProjectSegue" id="D68-h9-niy"/>
                         <segue destination="psC-j7-HyL" kind="show" identifier="projectFullView" id="ian-7j-XJZ"/>
+                        <segue destination="noF-1X-Cqp" kind="show" identifier="overviewSegue" id="Fl6-iO-9iN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhH-V3-rR3" sceneMemberID="firstResponder"/>
@@ -8633,6 +8634,7 @@ Email icon
                                                         <constraint firstItem="84P-ae-MMu" firstAttribute="top" secondItem="uxF-ap-oN9" secondAttribute="top" id="59V-Cd-6wG"/>
                                                         <constraint firstItem="84P-ae-MMu" firstAttribute="leading" secondItem="uxF-ap-oN9" secondAttribute="leading" id="5R3-Ra-RBJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="84P-ae-MMu" secondAttribute="trailing" id="FDQ-dq-hkw"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="bmH-jU-E3U"/>
                                                         <constraint firstAttribute="bottom" secondItem="84P-ae-MMu" secondAttribute="bottom" id="goY-vt-gIf"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -8662,8 +8664,7 @@ Email icon
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="AutoTableBannerImage" destination="jpB-kq-ryR" id="xfL-NL-WY5"/>
-                                            <outlet property="Banner" destination="jpB-kq-ryR" id="cya-AN-xVs"/>
+                                            <outlet property="Banner" destination="jpB-kq-ryR" id="Zau-Fi-EwP"/>
                                             <outlet property="Description" destination="hZS-h2-RcC" id="bNC-Ub-SjR"/>
                                             <outlet property="TextLabel" destination="kYu-fn-mvU" id="kNs-n4-93L"/>
                                             <outlet property="Title" destination="dau-0F-eah" id="Mcp-nQ-W74"/>

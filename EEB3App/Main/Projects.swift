@@ -151,8 +151,8 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         
         if let index = indexPath {
             print("Got clicked on index: \(index)!")
-            //performSegue
             UserDefaults.standard.set(ProjectInformation[index.row].title, forKey: "selectedProject")
+            performSegue(withIdentifier: "overviewSegue", sender: self)
             //Open the selected project view, by setting the project values
         }
     }
