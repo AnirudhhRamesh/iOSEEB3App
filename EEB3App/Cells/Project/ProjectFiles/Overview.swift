@@ -20,7 +20,7 @@ struct ProjectPage:Codable{
     var Websites:[Website]
     var Youtubes:[Youtube]
 }
-//Latest version
+//Latest version so far
 struct Banner:Codable{
     var pos:Int
     //var page:String --> We would use this to collect everything in one project page... This is probably not ideal but it would work.
