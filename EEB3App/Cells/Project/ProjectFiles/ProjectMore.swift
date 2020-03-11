@@ -15,7 +15,8 @@ class ProjectMore: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var myTableView: UITableView!
     
     var ProjectPages: [ProjectPage] = []
-    
+    //Latest version
+
     var Banners:[Banner] = []
     var TextCards:[TextCard] = []
     var SocialIcons:[SocialIcon] = []
