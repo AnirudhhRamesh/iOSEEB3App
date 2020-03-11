@@ -20,7 +20,7 @@ class CreditsView: UIViewController{
         self.navigationController?.view.backgroundColor = .clear
         
         navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
 }

@@ -67,7 +67,7 @@ class Schedule: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     override func viewLayoutMarginsDidChange() {
         
-        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation){
+        if UIDevice.current.orientation.isPortrait{
             topBar = (self.navigationController?.navigationBar.frame.height)!
             bottomBar = (self.tabBarController?.tabBar.frame.height)!
             let screenCorrectedHeight = self.view.frame.height - 6.55*(topBar + bottomBar)
@@ -172,7 +172,7 @@ class Schedule: UIViewController, UICollectionViewDelegate, UICollectionViewData
     }
     
     
-    func tap(_ sender: UITapGestureRecognizer) {
+    @objc func tap(_ sender: UITapGestureRecognizer) {
         
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)

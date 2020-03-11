@@ -43,7 +43,7 @@ class Settings: UIViewController, UITableViewDelegate, UITableViewDataSource, My
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         navigationController?.navigationBar.tintColor = UIColor.init(hexString: "#3f51b5")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

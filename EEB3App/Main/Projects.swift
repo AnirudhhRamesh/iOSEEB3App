@@ -144,7 +144,7 @@ class Projects: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         return cell
     }
     
-    func tap(_ sender: UITapGestureRecognizer) {
+    @objc func tap(_ sender: UITapGestureRecognizer) {
         
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)

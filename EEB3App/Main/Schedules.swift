@@ -40,7 +40,7 @@ class Schedules: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     override func viewLayoutMarginsDidChange() {
         
-        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation){
+        if UIDevice.current.orientation.isPortrait{
             topBar = (self.navigationController?.navigationBar.frame.height)!
             bottomBar = (self.tabBarController?.tabBar.frame.height)!
             let screenCorrectedHeight = self.view.frame.height - 2*(topBar + bottomBar)

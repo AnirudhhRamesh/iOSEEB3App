@@ -9,7 +9,6 @@
 import UIKit
 
 class TimerView: UIViewController {
-    
 
     @IBOutlet weak var resetButtonOutlet: UIButton!
     @IBOutlet weak var stopButtonOutlet: UIButton!
@@ -28,7 +27,7 @@ class TimerView: UIViewController {
         stopButtonOutlet.isEnabled = true
     }
     
-    func updateTimer() {
+    @objc func updateTimer() {
         if seconds < 1 {
             timer.invalidate()
             //Send alert to indicate "time's up!"
@@ -84,5 +83,4 @@ class TimerView: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }

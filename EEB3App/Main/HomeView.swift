@@ -95,7 +95,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
     }
 
-    func DateandTime() {
+    @objc func DateandTime() {
         
         let time = DateFormatter()
         let date = DateFormatter()
@@ -118,7 +118,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource{
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         // exclude some activity types from the list (optional)
-        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
         
         // present the view controller
         self.present(activityViewController, animated: true, completion: nil)

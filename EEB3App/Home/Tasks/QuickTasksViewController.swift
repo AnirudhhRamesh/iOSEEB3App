@@ -53,7 +53,7 @@ class QuickTasksViewController: UIViewController, UITableViewDelegate, UITableVi
         myTableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         

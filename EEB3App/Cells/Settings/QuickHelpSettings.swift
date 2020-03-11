@@ -47,7 +47,7 @@ class QuickHelpSettings: UITableViewCell, UICollectionViewDelegate, UICollection
         return cell
     }
     
-    func tap(_ sender: UITapGestureRecognizer) {
+    @objc func tap(_ sender: UITapGestureRecognizer) {
         
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)

@@ -57,7 +57,7 @@ class WebsiteSectionCell: UITableViewCell, UICollectionViewDelegate, UICollectio
         return cell
     }
 
-    func tap(_ sender: UITapGestureRecognizer) {
+    @objc func tap(_ sender: UITapGestureRecognizer) {
         let location = sender.location(in: self.websiteCollectionView)
         let indexPath = self.websiteCollectionView.indexPathForItem(at: location)
         print("indexPath of the cell tapped is \(indexPath!.row)")

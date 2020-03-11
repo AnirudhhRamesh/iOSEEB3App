@@ -32,6 +32,8 @@
 		B74B5566217BCAF800F16203 /* PeriodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B5565217BCAF800F16203 /* PeriodCollectionViewCell.swift */; };
 		B74E25A0217B460500B882E5 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74E259F217B460500B882E5 /* ScrollView.swift */; };
 		B74EAA741F641D4F0040D288 /* AbsencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EAA731F641D4F0040D288 /* AbsencesViewController.swift */; };
+		B74F820621DA733B00511D7D /* Participate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F820521DA733B00511D7D /* Participate.swift */; };
+		B74F820A21DA741F00511D7D /* ProjectMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F820921DA741F00511D7D /* ProjectMore.swift */; };
 		B75ED1622167B6C500808275 /* ProjectFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED1612167B6C500808275 /* ProjectFullView.swift */; };
 		B75ED1662167B85D00808275 /* ProjectViewUpdateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED1652167B85D00808275 /* ProjectViewUpdateCell.swift */; };
 		B75ED1682167B88000808275 /* ProjectViewSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75ED1672167B88000808275 /* ProjectViewSectionCell.swift */; };
@@ -151,6 +153,8 @@
 		B74B5565217BCAF800F16203 /* PeriodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodCollectionViewCell.swift; sourceTree = "<group>"; };
 		B74E259F217B460500B882E5 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		B74EAA731F641D4F0040D288 /* AbsencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsencesViewController.swift; sourceTree = "<group>"; };
+		B74F820521DA733B00511D7D /* Participate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participate.swift; sourceTree = "<group>"; };
+		B74F820921DA741F00511D7D /* ProjectMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMore.swift; sourceTree = "<group>"; };
 		B75ED1612167B6C500808275 /* ProjectFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFullView.swift; sourceTree = "<group>"; };
 		B75ED1652167B85D00808275 /* ProjectViewUpdateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewUpdateCell.swift; sourceTree = "<group>"; };
 		B75ED1672167B88000808275 /* ProjectViewSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewSectionCell.swift; sourceTree = "<group>"; };
@@ -607,6 +611,8 @@
 			children = (
 				B7EE5C0C21D7A0950087DF5A /* Cells */,
 				B774EE0321D7A80600EB536C /* Overview.swift */,
+				B74F820521DA733B00511D7D /* Participate.swift */,
+				B74F820921DA741F00511D7D /* ProjectMore.swift */,
 			);
 			path = ProjectFiles;
 			sourceTree = "<group>";
@@ -729,12 +735,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "RAMESH anirudhh";
 				TargetAttributes = {
 					B7795AA01F367C950008AEC5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = V298UZN425;
+						DevelopmentTeam = FRG9F8QT84;
 						ProvisioningStyle = Automatic;
 					};
 					B7795AB61F367C960008AEC5 = {
@@ -751,7 +757,7 @@
 			};
 			buildConfigurationList = B7795A9C1F367C950008AEC5 /* Build configuration list for PBXProject "EEB3App" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -990,6 +996,7 @@
 				B76A9E3F2073B4EB00AAB5BA /* DetailNotificationView.swift in Sources */,
 				B738439D206D62E000B7A047 /* NotificationCenterLogin.swift in Sources */,
 				B774EE0421D7A80600EB536C /* Overview.swift in Sources */,
+				B74F820621DA733B00511D7D /* Participate.swift in Sources */,
 				B7891A12217379FF0073C174 /* segueCell.swift in Sources */,
 				B748786B1F3CADEF00BC09A5 /* WebsitesView.swift in Sources */,
 				B7EE5C0921D79F9C0087DF5A /* UpdatesCell.swift in Sources */,
@@ -1032,6 +1039,7 @@
 				B74E25A0217B460500B882E5 /* ScrollView.swift in Sources */,
 				B7EE5BFF21D79F060087DF5A /* BannerCell.swift in Sources */,
 				B7EE5C0521D79F600087DF5A /* YoutubeCell.swift in Sources */,
+				B74F820A21DA741F00511D7D /* ProjectMore.swift in Sources */,
 				B712B96B2189179700E2081E /* NewTaskCell.swift in Sources */,
 				B7696257206D3015007E1EBA /* NotificationCell.swift in Sources */,
 				B7F5A57D21691572001AE65F /* ImageCropper.swift in Sources */,
@@ -1091,6 +1099,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1149,6 +1158,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1201,14 +1211,14 @@
 			baseConfigurationReference = D154358114F6B2157DE82C13 /* Pods-EEB3App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V298UZN425;
+				DEVELOPMENT_TEAM = FRG9F8QT84;
 				INFOPLIST_FILE = EEB3App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ARStudios.EEB3App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ARStudio.EEB3App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENABLE_BATCH_MODE = NO;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1218,14 +1228,14 @@
 			baseConfigurationReference = B950B0BC18C818ED82E42A7F /* Pods-EEB3App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V298UZN425;
+				DEVELOPMENT_TEAM = FRG9F8QT84;
 				INFOPLIST_FILE = EEB3App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ARStudios.EEB3App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ARStudio.EEB3App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENABLE_BATCH_MODE = NO;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

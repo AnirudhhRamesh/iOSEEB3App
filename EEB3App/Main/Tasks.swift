@@ -38,7 +38,7 @@ class Tasks: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
     //Create a new task
     @IBAction func newObjectTapped(_ sender: Any)
     {
-        let myalert = UIAlertController(title: "Create a New Item", message: "Select whether you would like to create a new task or a new group", preferredStyle: UIAlertControllerStyle.alert)
+        let myalert = UIAlertController(title: "Create a New Item", message: "Select whether you would like to create a new task or a new group", preferredStyle: UIAlertController.Style.alert)
         
         myalert.addAction(UIAlertAction(title: "Group", style: .default) { (action:UIAlertAction!) in
             self.performSegue(withIdentifier: "createGroupSegue", sender: self)

@@ -1,8 +1,8 @@
 //
-//  Overview.swift
+//  Participate.swift
 //  EEB3App
 //
-//  Created by Anirudhh Ramesh on 29/12/2018.
+//  Created by Anirudhh Ramesh on 31/12/2018.
 //  Copyright © 2018 RAMESH anirudhh. All rights reserved.
 //
 
@@ -10,63 +10,12 @@ import Foundation
 import UIKit
 import Firebase
 
-struct ProjectPage:Codable{
-    //Figure out how to store the values, maybe a struct per type (so struct for bannercells, struct for textcardcells), and then group them together under this ProjectPageStruct.
-    //Then read sort the ProjectPageStruct based on the page (eg. Overview, Participate or More) and then sort through these page items based on the "Pos" value.
-    var Banners:[Banner]
-    var TextCards:[TextCard]
-    var SocialIcons:[SocialIcon]
-    var Buttons:[Button]
-    var Websites:[Website]
-    var Youtubes:[Youtube]
-}
-
-struct Banner:Codable{
-    var pos:Int
-    //var page:String --> We would use this to collect everything in one project page... This is probably not ideal but it would work.
-    var image:String
-    var title:String
-    var description:String
-    var text:String
-}
-
-struct TextCard:Codable{
-    var pos:Int
-    var title:String
-    var text:String
-}
-
-struct SocialIcon:Codable{
-    var pos:Int
-    var link1:String
-    var link2:String
-    var link3:String
-    var link4:String
-    var type:String
-}
-
-struct Button:Codable{
-    var pos:Int
-    var title:String
-    var link:String
-}
-
-struct Website:Codable{
-    var pos:Int
-    var link:String
-}
-
-struct Youtube:Codable{
-    var pos:Int
-    var link:String
-}
-
-class Overview: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class Participate: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var myTableView: UITableView!
     
     var ProjectPages: [ProjectPage] = []
-
+    
     var Banners:[Banner] = []
     var TextCards:[TextCard] = []
     var SocialIcons:[SocialIcon] = []
@@ -76,15 +25,11 @@ class Overview: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var totalOverviewItems:Int = 0
     var currentPosition:Int = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        tabBarController?.tabBar.items?[0].badgeValue = "1"   // this will add "1" badge to your fifth tab bar item
-        //tabBarController?.tabBar.items?.first?.badgeValue = nil  -- Removes the badge
-
         let selectedProject = UserDefaults.standard.string(forKey: "selectedProject")
         let projectRef = Database.database().reference().child("Schools").child(Variables.schoolName).child("Projects").child(selectedProject!)
         projectRef.observe(.value, with: { snapshot in
@@ -93,7 +38,7 @@ class Overview: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 if let pageSnapshot = page as? DataSnapshot{
                     for pageItem in pageSnapshot.children{
                         //Overview page
-                        if pageSnapshot.key == "Overview"{
+                        if pageSnapshot.key == "Participate"{
                             if let itemSnapshot = pageItem as? DataSnapshot{
                                 //Banners
                                 if itemSnapshot.key.range(of: "Banner") != nil{
@@ -137,6 +82,7 @@ class Overview: UIViewController, UITableViewDelegate, UITableViewDataSource{
                     print(self.totalOverviewItems)
                     self.myTableView.reloadData()
                 }
+                
             }
         })
     }
@@ -191,7 +137,6 @@ class Overview: UIViewController, UITableViewDelegate, UITableViewDataSource{
             for website in ProjectPages[0].Websites{
                 if website.pos == indexPath.row{
                     //Set link of websiteCell
-                    websiteCell.displayContent(url: website.link)
                     return websiteCell
                 }
             }

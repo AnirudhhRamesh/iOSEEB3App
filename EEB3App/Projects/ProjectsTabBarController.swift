@@ -14,18 +14,18 @@ class ProjectsTabBarController: UITabBarController {
         super.viewDidLoad()
         tabBarController?.title = "Projects"
         tabBarController?.navigationController?.isNavigationBarHidden=false;
-        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right Button Title", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("rightButtonFunction")))
+        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right Button Title", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("rightButtonFunction")))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         tabBarController?.title = "Projects"
         tabBarController?.navigationController?.isNavigationBarHidden=false;
-        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right Button Title", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("rightButtonFunction")))
+        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right Button Title", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("rightButtonFunction")))
     }
 
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.title = "Projects"
         tabBarController?.navigationController?.isNavigationBarHidden=false;
-        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right Button Title", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("rightButtonFunction")))
+        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right Button Title", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("rightButtonFunction")))
     }
 }

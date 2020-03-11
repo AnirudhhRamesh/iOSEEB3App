@@ -8,7 +8,7 @@
 
 import UIKit
 
-var data = UIImagePNGRepresentation(blankimage!)! as NSData
+var data = blankimage!.pngData()! as NSData
 var blankimage = UIImage(named: "blankImage.png")
 var ifScheduleText = UserDefaults.standard.object(forKey: "ScheduleVisible")
 
@@ -55,10 +55,10 @@ class SchedulesView: UIViewController, UINavigationControllerDelegate, UIImagePi
         self.present(actionSheet, animated:true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as! UIImage
         
-        let imageData:NSData = UIImagePNGRepresentation(image)! as NSData
+        let imageData:NSData = image.pngData()! as NSData
         
         UserDefaults.standard.set(imageData, forKey: "savedImage")
         data = UserDefaults.standard.object(forKey: "savedImage") as! NSData

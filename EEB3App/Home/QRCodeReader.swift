@@ -11,7 +11,7 @@ import AVFoundation
 import SafariServices
 
 class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    
+    /*
     var video = AVCaptureVideoPreviewLayer()
     
     @IBOutlet weak var qrcodeimage: UIImageView!
@@ -72,5 +72,5 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             }
         }
     }
-    
+    */
 }
